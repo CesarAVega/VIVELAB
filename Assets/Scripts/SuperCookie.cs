@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SuperCookie :  Cookie{
+public class SuperCookie :  Cookie {
 
     public float angulo;
 	

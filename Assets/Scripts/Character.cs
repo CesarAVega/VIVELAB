@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Character : MonoBehaviour {
 
-    public float speed;
+    public GameSettings settings;
     private Rigidbody rb;
 	// Use this for initialization
 	void Start () {
@@ -16,12 +16,13 @@ public class Character : MonoBehaviour {
 	}
 
     void FixedUpdate() { //llama el update en un momento fijo
-        float moveHorizontal = Input.GetAxis("Horizontal"); //obtener el inpunt horizontal
+        float moveHorizontal = Input.GetAxis("Horizontal"); //obtener el input horizontal
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f); // vector en 3D de movimiento solo movimiento en X
         //Debug.Log("");  //print
-        rb.AddForce(movement * speed);
-        float moveVetical = Input.GetAxis("Vertical"); //obtener el inpunt horizontal
-        Vector3 movment = new Vector3(0.0f, 0.0f, moveVetical); // vector en 3D de movimiento solo movimiento en X
-        rb.AddForce(movment * speed);
+        rb.AddForce(movement * settings.speed);
+        float moverVetical = Input.GetAxis("Vertical"); //obtener el input vertical
+        movement = new Vector3(0.0f, 0.0f, moverVetical); // vector en 3D de movimiento solo movimiento en X
+        //Debug.Log("");  //print
+        rb.AddForce(movement * settings.speed);
     }
 }
