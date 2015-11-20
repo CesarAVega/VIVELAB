@@ -7,6 +7,7 @@ public class GameSettings : ScriptableObject {
     public float speed;
     public float speedBoost;
     public float speedBoostDuration;
+    public float AnguloRotar;
 
     public float cookieScore;
     public float speedUpCookieScore;
